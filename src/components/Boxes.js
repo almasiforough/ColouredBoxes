@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import ShowBox from './ShowBox'
-import Fade from 'react-reveal/Fade'
 
 export default function Boxes() {
     const [colours, setColours] = useState(['black'])
@@ -33,14 +32,13 @@ export default function Boxes() {
     }
 
     return colours.map((item, index) => (
-        <Fade key={item + index.toString()}>
             <ShowBox
+                key={index.toString()}
                 ChangeColour={ChangeColour}
                 addBox={addBox}
                 Reset={reset}
                 id={index}
                 colour={item}
             />
-        </Fade>
     ))
 }
